@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/MondayRasp"
             android:layout_width="137dp"
             android:layout_height="53dp"
             android:backgroundTint="#F1E9DD"
@@ -34,23 +34,23 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/MondayZad"
             android:layout_width="137dp"
             android:layout_height="53dp"
             android:backgroundTint="#F1E9DD"
             android:contentDescription="@string/app_name"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintStart_toEndOf="@+id/imageButton2"
+            app:layout_constraintStart_toEndOf="@+id/MondayRasp"
             app:srcCompat="@drawable/ic_calendar" />
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/imageButton7"
             android:layout_width="137dp"
             android:layout_height="54dp"
             android:backgroundTint="#F1E9DD"
             android:contentDescription="@string/app_name"
             app:layout_constraintBottom_toTopOf="@+id/textView3"
-            app:layout_constraintStart_toEndOf="@+id/imageButton3"
+            app:layout_constraintStart_toEndOf="@+id/MondayZad"
             app:srcCompat="@drawable/ic_gear" />
 
         <TextView
@@ -69,7 +69,7 @@
             android:layout_marginEnd="34dp"
             android:text="Настройки"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+            app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
