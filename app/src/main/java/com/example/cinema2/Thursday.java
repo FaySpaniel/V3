@@ -5,15 +5,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.widget.TextView;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Thursday extends AppCompatActivity {
 
     float x1,x2,y1,y2;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thursday);
+
+        textView = findViewById(R.id.textView24);
+
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        calendar.add(Calendar.DATE,3);
+        String dateTime = simpleDateFormat.format(calendar.getTime());
+        textView.setText(dateTime);
     }
 
     public boolean onTouchEvent(MotionEvent touchEvent) {
