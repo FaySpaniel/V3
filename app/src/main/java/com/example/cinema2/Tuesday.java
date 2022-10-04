@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class Tuesday extends AppCompatActivity {
 
@@ -20,9 +21,11 @@ public class Tuesday extends AppCompatActivity {
         setContentView(R.layout.activity_tuesday);
 
         textView = findViewById(R.id.textView22);
+        Locale locale = new Locale("ru");
+        Locale.setDefault(locale);
 
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM EEEE");
         calendar.add(Calendar.DATE,1);
         String dateTime = simpleDateFormat.format(calendar.getTime());
         textView.setText(dateTime);
