@@ -92,8 +92,7 @@ public class MainActivity extends AppCompatActivity {
         };
         para4.setOnClickListener(fourthpara);
 
-        System.out.println("aaajja");
-        System.out.println(dateTime);
+
         Intent intent = getIntent();
 
         if (intent.getBooleanExtra("First", true)) {

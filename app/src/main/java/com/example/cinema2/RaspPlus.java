@@ -55,7 +55,7 @@ public class RaspPlus extends AppCompatActivity {
         trash.setOnClickListener(tra);
 
         View.OnClickListener bac = view -> {
-            Intent intent = new Intent(RaspPlus.this, TaskMain.class);
+            Intent intent = new Intent(RaspPlus.this, MainActivity.class);
             startActivity(intent);
         };
         back.setOnClickListener(bac);
