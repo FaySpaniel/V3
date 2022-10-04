@@ -1,7 +1,5 @@
 package com.example.cinema2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -9,13 +7,15 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
 public class Saturday extends AppCompatActivity {
 
-    Float x1,x2,y1,y2;
+    Float x1, x2, y1, y2;
     TextView textView;
     ImageButton rasp;
     ImageButton zad;
@@ -27,7 +27,7 @@ public class Saturday extends AppCompatActivity {
         setContentView(R.layout.activity_saturday);
 
         textView = findViewById(R.id.textView26);
-        rasp =(ImageButton) findViewById(R.id.Raspisanie);
+        rasp = (ImageButton) findViewById(R.id.Raspisanie);
         zad = (ImageButton) findViewById(R.id.Zadanie);
         setting = (ImageButton) findViewById(R.id.Setting);
 
@@ -36,35 +36,26 @@ public class Saturday extends AppCompatActivity {
 
         Calendar calendar = Calendar.getInstance();
         calendar.setFirstDayOfWeek(Calendar.SUNDAY);
-        calendar.set(Calendar.DAY_OF_WEEK,Calendar.SATURDAY);
+        calendar.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMMM, EEEE");
         String dateTime = simpleDateFormat.format(calendar.getTime());
         textView.setText(dateTime);
 
-        View.OnClickListener raspisanie = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Saturday.this,Saturday.class);
-                startActivity(intent);
-            }
+        View.OnClickListener raspisanie = view -> {
+            Intent intent = new Intent(Saturday.this, Saturday.class);
+            startActivity(intent);
         };
         rasp.setOnClickListener(raspisanie);
 
-        View.OnClickListener zadanie = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Saturday.this,TaskMain.class);
-                startActivity(intent);
-            }
+        View.OnClickListener zadanie = view -> {
+            Intent intent = new Intent(Saturday.this, TaskMain.class);
+            startActivity(intent);
         };
         zad.setOnClickListener(zadanie);
 
-        View.OnClickListener set = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Saturday.this,Settings.class);
-                startActivity(intent);
-            }
+        View.OnClickListener set = view -> {
+            Intent intent = new Intent(Saturday.this, Settings.class);
+            startActivity(intent);
         };
         setting.setOnClickListener(set);
     }

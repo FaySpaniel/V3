@@ -1,12 +1,12 @@
 package com.example.cinema2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class TaskMain extends AppCompatActivity {
 
@@ -24,7 +24,7 @@ public class TaskMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_main);
 
-        rasp =(ImageButton) findViewById(R.id.Raspisanie);
+        rasp = (ImageButton) findViewById(R.id.Raspisanie);
         zad = (ImageButton) findViewById(R.id.Zadanie);
         setting = (ImageButton) findViewById(R.id.Setting);
         task1 = (Button) findViewById(R.id.button25);
@@ -36,7 +36,7 @@ public class TaskMain extends AppCompatActivity {
         View.OnClickListener raspisanie = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TaskMain.this,MainActivity.class);
+                Intent intent = new Intent(TaskMain.this, MainActivity.class);
                 startActivity(intent);
             }
         };
@@ -45,7 +45,7 @@ public class TaskMain extends AppCompatActivity {
         View.OnClickListener zadanie = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TaskMain.this,TaskMain.class);
+                Intent intent = new Intent(TaskMain.this, TaskMain.class);
                 startActivity(intent);
             }
         };
@@ -54,7 +54,7 @@ public class TaskMain extends AppCompatActivity {
         View.OnClickListener set = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TaskMain.this,Settings.class);
+                Intent intent = new Intent(TaskMain.this, Settings.class);
                 startActivity(intent);
             }
         };
@@ -63,7 +63,7 @@ public class TaskMain extends AppCompatActivity {
         View.OnClickListener firsttask = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TaskMain.this,Tasks.class);
+                Intent intent = new Intent(TaskMain.this, Tasks.class);
                 startActivity(intent);
             }
         };
@@ -72,7 +72,7 @@ public class TaskMain extends AppCompatActivity {
         View.OnClickListener secondtask = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TaskMain.this,Tasks.class);
+                Intent intent = new Intent(TaskMain.this, Tasks.class);
                 startActivity(intent);
             }
         };
@@ -81,7 +81,7 @@ public class TaskMain extends AppCompatActivity {
         View.OnClickListener thirdtask = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TaskMain.this,Tasks.class);
+                Intent intent = new Intent(TaskMain.this, Tasks.class);
                 startActivity(intent);
             }
         };
@@ -90,7 +90,7 @@ public class TaskMain extends AppCompatActivity {
         View.OnClickListener fourthtask = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TaskMain.this,Tasks.class);
+                Intent intent = new Intent(TaskMain.this, Tasks.class);
                 startActivity(intent);
             }
         };
@@ -99,7 +99,7 @@ public class TaskMain extends AppCompatActivity {
         View.OnClickListener fifthtask = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TaskMain.this,Tasks.class);
+                Intent intent = new Intent(TaskMain.this, Tasks.class);
                 startActivity(intent);
             }
         };

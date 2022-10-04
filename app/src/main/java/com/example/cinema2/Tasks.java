@@ -1,11 +1,11 @@
 package com.example.cinema2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Tasks extends AppCompatActivity {
 
@@ -14,12 +14,13 @@ public class Tasks extends AppCompatActivity {
     ImageButton setting;
     ImageButton trash;
     ImageButton back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
 
-        rasp =(ImageButton) findViewById(R.id.Raspisanie);
+        rasp = (ImageButton) findViewById(R.id.Raspisanie);
         zad = (ImageButton) findViewById(R.id.Zadanie);
         setting = (ImageButton) findViewById(R.id.Setting);
         trash = (ImageButton) findViewById(R.id.Trash);
@@ -28,7 +29,7 @@ public class Tasks extends AppCompatActivity {
         View.OnClickListener raspisanie = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Tasks.this,MainActivity.class);
+                Intent intent = new Intent(Tasks.this, MainActivity.class);
                 startActivity(intent);
             }
         };
@@ -37,7 +38,7 @@ public class Tasks extends AppCompatActivity {
         View.OnClickListener zadanie = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Tasks.this,TaskMain.class);
+                Intent intent = new Intent(Tasks.this, TaskMain.class);
                 startActivity(intent);
             }
         };
@@ -46,7 +47,7 @@ public class Tasks extends AppCompatActivity {
         View.OnClickListener set = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Tasks.this,Settings.class);
+                Intent intent = new Intent(Tasks.this, Settings.class);
                 startActivity(intent);
             }
         };
@@ -55,7 +56,7 @@ public class Tasks extends AppCompatActivity {
         View.OnClickListener tra = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Tasks.this,TaskMain.class);
+                Intent intent = new Intent(Tasks.this, TaskMain.class);
                 startActivity(intent);
             }
         };
@@ -64,7 +65,7 @@ public class Tasks extends AppCompatActivity {
         View.OnClickListener bac = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Tasks.this,TaskMain.class);
+                Intent intent = new Intent(Tasks.this, TaskMain.class);
                 startActivity(intent);
             }
         };
