@@ -26,10 +26,18 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView12);
         Locale locale = new Locale("ru");
         Locale.setDefault(locale);
+
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM EEEE");
+        calendar.setFirstDayOfWeek(Calendar.SUNDAY);
+        calendar.set(Calendar.DAY_OF_WEEK,Calendar.MONDAY);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMMM, EEEE");
         String dateTime = simpleDateFormat.format(calendar.getTime());
         textView.setText(dateTime);
+    }
+    @Override
+    protected void onStart(){
+        super.onStart();
+
     }
 
 

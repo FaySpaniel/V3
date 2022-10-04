@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class Saturday extends AppCompatActivity {
 
@@ -21,10 +22,13 @@ public class Saturday extends AppCompatActivity {
         setContentView(R.layout.activity_saturday);
 
         textView = findViewById(R.id.textView26);
+        Locale locale = new Locale("ru");
+        Locale.setDefault(locale);
 
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        calendar.add(Calendar.DATE,5);
+        calendar.setFirstDayOfWeek(Calendar.SUNDAY);
+        calendar.set(Calendar.DAY_OF_WEEK,Calendar.SATURDAY);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMMM, EEEE");
         String dateTime = simpleDateFormat.format(calendar.getTime());
         textView.setText(dateTime);
     }

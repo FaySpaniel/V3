@@ -25,8 +25,9 @@ public class Tuesday extends AppCompatActivity {
         Locale.setDefault(locale);
 
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM EEEE");
-        calendar.add(Calendar.DATE,1);
+        calendar.setFirstDayOfWeek(Calendar.SUNDAY);
+        calendar.set(Calendar.DAY_OF_WEEK,Calendar.TUESDAY);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMMM, EEEE");
         String dateTime = simpleDateFormat.format(calendar.getTime());
         textView.setText(dateTime);
     }
