@@ -14,16 +14,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
-            android:id="@+id/MondayRasp"
-            android:layout_width="137dp"
-            android:layout_height="53dp"
-            android:backgroundTint="#F1E9DD"
-            android:contentDescription="@string/app_name"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_book" />
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -32,26 +22,6 @@
             android:text="Расписание"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageButton
-            android:id="@+id/MondayZad"
-            android:layout_width="137dp"
-            android:layout_height="53dp"
-            android:backgroundTint="#F1E9DD"
-            android:contentDescription="@string/app_name"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintStart_toEndOf="@+id/MondayRasp"
-            app:srcCompat="@drawable/ic_calendar" />
-
-        <ImageButton
-            android:id="@+id/imageButton7"
-            android:layout_width="137dp"
-            android:layout_height="54dp"
-            android:backgroundTint="#F1E9DD"
-            android:contentDescription="@string/app_name"
-            app:layout_constraintBottom_toTopOf="@+id/textView3"
-            app:layout_constraintStart_toEndOf="@+id/MondayZad"
-            app:srcCompat="@drawable/ic_gear" />
 
         <TextView
             android:id="@+id/textView2"
@@ -68,8 +38,41 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="34dp"
             android:text="Настройки"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:id="@+id/Zadanie"
+            android:layout_width="137dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:backgroundTint="#F1E9DD"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintEnd_toStartOf="@+id/Setting"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_book" />
+
+        <ImageButton
+            android:id="@+id/Setting"
+            android:layout_width="137dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:backgroundTint="#F1E9DD"
+            android:contentDescription="@string/app_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_gear" />
+
+        <ImageButton
+            android:id="@+id/Raspisanie"
+            android:layout_width="137dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:backgroundTint="#F1E9DD"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_calendar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -83,18 +86,6 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="#F1E9D2"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_plus" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"

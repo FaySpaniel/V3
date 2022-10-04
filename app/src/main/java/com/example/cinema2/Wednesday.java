@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
@@ -14,6 +16,9 @@ public class Wednesday extends AppCompatActivity {
 
     float x1,x2,y1,y2;
     TextView textView;
+    ImageButton rasp;
+    ImageButton zad;
+    ImageButton setting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +26,10 @@ public class Wednesday extends AppCompatActivity {
         setContentView(R.layout.activity_wednesday);
 
         textView = findViewById(R.id.textView23);
+        rasp =(ImageButton) findViewById(R.id.Raspisanie);
+        zad = (ImageButton) findViewById(R.id.Zadanie);
+        setting = (ImageButton) findViewById(R.id.Setting);
+
         Locale locale = new Locale("ru");
         Locale.setDefault(locale);
 
@@ -30,6 +39,33 @@ public class Wednesday extends AppCompatActivity {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMMM, EEEE");
         String dateTime = simpleDateFormat.format(calendar.getTime());
         textView.setText(dateTime);
+
+        View.OnClickListener raspisanie = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Wednesday.this,Wednesday.class);
+                startActivity(intent);
+            }
+        };
+        rasp.setOnClickListener(raspisanie);
+
+        View.OnClickListener zadanie = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Wednesday.this,TaskMain.class);
+                startActivity(intent);
+            }
+        };
+        zad.setOnClickListener(zadanie);
+
+        View.OnClickListener set = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Wednesday.this,Settings.class);
+                startActivity(intent);
+            }
+        };
+        setting.setOnClickListener(set);
     }
 
     public boolean onTouchEvent(MotionEvent touchEvent) {

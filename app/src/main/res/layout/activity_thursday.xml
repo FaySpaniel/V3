@@ -42,18 +42,18 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <ImageButton
-            android:id="@+id/MondayRasp"
+            android:id="@+id/Zadanie"
             android:layout_width="137dp"
             android:layout_height="54dp"
             android:layout_weight="1"
             android:backgroundTint="#F1E9DD"
             android:contentDescription="@string/app_name"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton7"
+            app:layout_constraintEnd_toStartOf="@+id/Setting"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_book" />
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/Setting"
             android:layout_width="137dp"
             android:layout_height="54dp"
             android:layout_weight="1"
@@ -64,7 +64,7 @@
             app:srcCompat="@drawable/ic_gear" />
 
         <ImageButton
-            android:id="@+id/MondayZad"
+            android:id="@+id/Raspisanie"
             android:layout_width="137dp"
             android:layout_height="54dp"
             android:layout_weight="1"
