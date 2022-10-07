@@ -1,6 +1,8 @@
 package com.example.cinema2;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -25,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
     Button para2;
     Button para3;
     Button para4;
+    ConstraintLayout aboba;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +44,12 @@ public class MainActivity extends AppCompatActivity {
         para2 = (Button) findViewById(R.id.button2);
         para3 = (Button) findViewById(R.id.button3);
         para4 = (Button) findViewById(R.id.button4);
+        aboba = (ConstraintLayout) findViewById(R.id.constraintLayout3);
 
         Locale locale = new Locale("ru");
         Locale.setDefault(locale);
+
+        aboba.setBackgroundColor(R.color.Main);
 
         Calendar calendar = Calendar.getInstance();
         calendar.setFirstDayOfWeek(Calendar.SUNDAY);
