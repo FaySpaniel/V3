@@ -65,8 +65,7 @@ public class Tasks extends AppCompatActivity {
         View.OnClickListener bac = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Tasks.this, TaskMain.class);
-                startActivity(intent);
+                finish();
             }
         };
         back.setOnClickListener(bac);

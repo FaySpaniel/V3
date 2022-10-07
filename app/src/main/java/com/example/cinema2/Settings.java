@@ -43,8 +43,7 @@ public class Settings extends AppCompatActivity {
         setting.setOnClickListener(set);
 
         View.OnClickListener bac = view -> {
-            Intent intent = new Intent(Settings.this, MainActivity.class);
-            startActivity(intent);
+            finish();
         };
         back.setOnClickListener(bac);
     }
