@@ -77,17 +77,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/textView38"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="56dp"
-        android:text="Повторяющиеся недели"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Back" />
-
-    <TextView
         android:id="@+id/textView52"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,7 +85,7 @@
         android:text="Выбор недели"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView38" />
+        app:layout_constraintTop_toBottomOf="@+id/Back" />
 
     <TextView
         android:id="@+id/textView4"
@@ -121,27 +110,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_arrow_left" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="56dp"
-        android:theme="@style/MySwitch"
-        app:layout_constraintStart_toEndOf="@+id/textView38"
-        app:layout_constraintTop_toBottomOf="@+id/Back"
-        tools:ignore="TouchTargetSizeCheck" />
-
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="196dp"
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="85dp"
         android:background="#D9D2BD"
         android:entries="@array/Mode"
         app:layout_constraintStart_toEndOf="@+id/textView52"
-        app:layout_constraintTop_toBottomOf="@+id/textView38"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
         tools:ignore="TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

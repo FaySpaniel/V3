@@ -61,23 +61,24 @@ public class Thursday extends AppCompatActivity {
         if (with.hasKey("weektype"))
             type = with.readInt("weektype");
 
-        View.OnClickListener raspisanie = view -> {
-            Intent intent = new Intent(Thursday.this, Thursday.class);
-            startActivity(intent);
-        };
-        rasp.setOnClickListener(raspisanie);
 
-        View.OnClickListener zadanie = view -> {
-            Intent intent = new Intent(Thursday.this, TaskMain.class);
-            startActivity(intent);
-        };
-        zad.setOnClickListener(zadanie);
+        rasp.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Thursday.this, Thursday.class);
+                    startActivity(intent);
+                });
 
-        View.OnClickListener set = view -> {
-            Intent intent = new Intent(Thursday.this, Settings.class);
-            startActivity(intent);
-        };
-        setting.setOnClickListener(set);
+        zad.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Thursday.this, TaskMain.class);
+                    startActivity(intent);
+                });
+
+        setting.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Thursday.this, Settings.class);
+                    startActivity(intent);
+                });
 
         int finalType = type;
         para1.setOnClickListener

@@ -5,12 +5,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ColorForLayout extends AppCompatActivity {
     float x1, x2, y1, y2;
     Button abrikos, aquamarine, blue, bheaven, borange, bpink, brown, chertopolox, dpink, dblue, ddark, dgreen, flower, glinomes, gray, gtree, grass, hacki, latoune, lbrown, maline, mandrine, mint, niagara, pinkq, siena, sparge, pinka, blackred, whitegreen, briblue, dpurple, heaven, opink, tomato, white;
+    ImageButton rasp;
+    ImageButton zad;
+    ImageButton setting;
 
     @SuppressLint("ResourceType")
     @Override
@@ -18,6 +22,9 @@ public class ColorForLayout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_for_layout);
 
+        rasp = (ImageButton) findViewById(R.id.Raspisanie);
+        zad = (ImageButton) findViewById(R.id.Zadanie);
+        setting = (ImageButton) findViewById(R.id.Setting);
         abrikos = (Button) findViewById(R.id.button30);
         aquamarine = (Button) findViewById(R.id.button31);
         blue = (Button) findViewById(R.id.button32);
@@ -54,6 +61,24 @@ public class ColorForLayout extends AppCompatActivity {
         siena = (Button) findViewById(R.id.button63);
         blackred = (Button) findViewById(R.id.button64);
         white = (Button) findViewById(R.id.button65);
+
+        rasp.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(ColorForLayout.this,MainActivity.class);
+                    startActivity(intent);
+                });
+
+        zad.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(ColorForLayout.this, TaskMain.class);
+                    startActivity(intent);
+                });
+
+        setting.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(ColorForLayout.this, Settings.class);
+                    startActivity(intent);
+                });
 
 
         int id = getIntent().getIntExtra("id", -1);

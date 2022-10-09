@@ -40,25 +40,24 @@ public class TaskMain extends AppCompatActivity {
                 startActivity(intent);
             }
         };
-        rasp.setOnClickListener(raspisanie);
 
-        View.OnClickListener zadanie = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TaskMain.this, TaskMain.class);
-                startActivity(intent);
-            }
-        };
-        zad.setOnClickListener(zadanie);
+        rasp.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(TaskMain.this, MainActivity.class);
+                    startActivity(intent);
+                });
 
-        View.OnClickListener set = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TaskMain.this, Settings.class);
-                startActivity(intent);
-            }
-        };
-        setting.setOnClickListener(set);
+        zad.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(TaskMain.this, TaskMain.class);
+                    startActivity(intent);
+                });
+
+        setting.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(TaskMain.this, Settings.class);
+                    startActivity(intent);
+                });
 
         View.OnClickListener firsttask = new View.OnClickListener() {
             @Override

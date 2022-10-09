@@ -27,6 +27,7 @@ public class Settings extends AppCompatActivity {
         setting = (ImageButton) findViewById(R.id.Setting);
         back = (ImageButton) findViewById(R.id.Back);
         Spinner typeweek = findViewById(R.id.spinner);
+
         typeweek.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent,
                                        View itemSelected, int selectedItemPosition, long selectedId) {
@@ -38,28 +39,28 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-        View.OnClickListener raspisanie = view -> {
-            Intent intent = new Intent(Settings.this, MainActivity.class);
-            startActivity(intent);
-        };
-        rasp.setOnClickListener(raspisanie);
+        rasp.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Settings.this, MainActivity.class);
+                    startActivity(intent);
+                });
 
-        View.OnClickListener zadanie = view -> {
-            Intent intent = new Intent(Settings.this, TaskMain.class);
-            startActivity(intent);
-        };
-        zad.setOnClickListener(zadanie);
+        zad.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Settings.this, TaskMain.class);
+                    startActivity(intent);
+                });
 
-        View.OnClickListener set = view -> {
-            Intent intent = new Intent(Settings.this, Settings.class);
-            startActivity(intent);
-        };
-        setting.setOnClickListener(set);
+        setting.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Settings.this, Settings.class);
+                    startActivity(intent);
+                });
 
-        View.OnClickListener bac = view -> {
-            finish();
-        };
-        back.setOnClickListener(bac);
+        back.setOnClickListener
+                (view -> {
+                    finish();
+                });
 
         SaveRead with = SaveRead.with(this);
         if (with.hasKey("weektype"))

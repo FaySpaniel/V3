@@ -63,35 +63,35 @@ public class RaspPlus extends AppCompatActivity {
         }
 
 
-        View.OnClickListener raspisanie = view -> {
-            Intent intent = new Intent(RaspPlus.this, MainActivity.class);
-            startActivity(intent);
-        };
-        rasp.setOnClickListener(raspisanie);
+        rasp.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(RaspPlus.this, MainActivity.class);
+                    startActivity(intent);
+                });
 
-        View.OnClickListener zadanie = view -> {
-            Intent intent = new Intent(RaspPlus.this, TaskMain.class);
-            startActivity(intent);
-        };
-        zad.setOnClickListener(zadanie);
+        zad.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(RaspPlus.this, TaskMain.class);
+                    startActivity(intent);
+                });
 
-        View.OnClickListener set = view -> {
-            Intent intent = new Intent(RaspPlus.this, Settings.class);
-            startActivity(intent);
-        };
-        setting.setOnClickListener(set);
+        setting.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(RaspPlus.this, Settings.class);
+                    startActivity(intent);
+                });
 
-        View.OnClickListener tra = view -> {
-            SaveRead.with(this).removeKey(name);
-            startActivity(new Intent(this, MainActivity.class));
-            finish();
-        };
-        trash.setOnClickListener(tra);
+        trash.setOnClickListener
+                (view -> {
+                    SaveRead.with(this).removeKey(name);
+                    startActivity(new Intent(this, MainActivity.class));
+                    finish();
+                });
 
-        View.OnClickListener bac = view -> {
-            finish();
-        };
-        back.setOnClickListener(bac);
+        back.setOnClickListener
+                (view -> {
+                    finish();
+                });
 
         View.OnClickListener SaveInfo = new View.OnClickListener() {
             @Override

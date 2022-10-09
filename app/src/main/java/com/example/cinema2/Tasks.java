@@ -33,41 +33,35 @@ public class Tasks extends AppCompatActivity {
                 startActivity(intent);
             }
         };
-        rasp.setOnClickListener(raspisanie);
 
-        View.OnClickListener zadanie = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Tasks.this, TaskMain.class);
-                startActivity(intent);
-            }
-        };
-        zad.setOnClickListener(zadanie);
+        rasp.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Tasks.this, MainActivity.class);
+                    startActivity(intent);
+                });
 
-        View.OnClickListener set = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Tasks.this, Settings.class);
-                startActivity(intent);
-            }
-        };
-        setting.setOnClickListener(set);
+        zad.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Tasks.this, TaskMain.class);
+                    startActivity(intent);
+                });
 
-        View.OnClickListener tra = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Tasks.this, TaskMain.class);
-                startActivity(intent);
-            }
-        };
-        trash.setOnClickListener(tra);
+        setting.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Tasks.this, Settings.class);
+                    startActivity(intent);
+                });
 
-        View.OnClickListener bac = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        };
-        back.setOnClickListener(bac);
+        //trash.setOnClickListener
+                //(view -> {
+                    //SaveRead.with(this).removeKey(name);
+                    //startActivity(new Intent(this, MainActivity.class));
+                    //finish();
+                //});
+
+        back.setOnClickListener
+                (view -> {
+                    finish();
+                });
     }
 }
