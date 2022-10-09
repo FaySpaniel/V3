@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class Thursday extends AppCompatActivity {
     ImageButton rasp;
     ImageButton zad;
     ImageButton setting;
+    Button para1, para2,para3,para4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,10 @@ public class Thursday extends AppCompatActivity {
         zad = (ImageButton) findViewById(R.id.Zadanie);
         setting = (ImageButton) findViewById(R.id.Setting);
         textView = findViewById(R.id.textView24);
+        para1 = findViewById(R.id.button13);
+        para2 = findViewById(R.id.button14);
+        para3 = findViewById(R.id.button15);
+        para4 = findViewById(R.id.button16);
 
         Locale locale = new Locale("ru");
         Locale.setDefault(locale);
@@ -58,6 +64,35 @@ public class Thursday extends AppCompatActivity {
             startActivity(intent);
         };
         setting.setOnClickListener(set);
+
+        para1.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Thursday.this, RaspPlus.class);
+                    intent.putExtra("id", 13);
+                    startActivity(intent);
+                });
+
+
+        para2.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Thursday.this, RaspPlus.class);
+                    intent.putExtra("id", 14);
+                    startActivity(intent);
+                });
+
+        para3.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Thursday.this, RaspPlus.class);
+                    intent.putExtra("id", 15);
+                    startActivity(intent);
+                });
+
+        para4.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Thursday.this, RaspPlus.class);
+                    intent.putExtra("id", 16);
+                    startActivity(intent);
+                });
     }
 
     public boolean onTouchEvent(MotionEvent touchEvent) {

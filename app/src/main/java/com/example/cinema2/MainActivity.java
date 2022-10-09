@@ -2,7 +2,6 @@ package com.example.cinema2;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -24,11 +22,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton rasp;
     ImageButton zad;
     ImageButton setting;
-    Button para1;
-    Button para2;
-    Button para3;
-    Button para4;
-    ConstraintLayout aboba;
+    Button para1, para2,para3,para4;
+
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -40,16 +35,15 @@ public class MainActivity extends AppCompatActivity {
         rasp = (ImageButton) findViewById(R.id.Raspisanie);
         zad = (ImageButton) findViewById(R.id.Zadanie);
         setting = (ImageButton) findViewById(R.id.Setting);
-        para1 = (Button) findViewById(R.id.button);
-        para2 = (Button) findViewById(R.id.button2);
-        para3 = (Button) findViewById(R.id.button3);
-        para4 = (Button) findViewById(R.id.button4);
-        aboba = (ConstraintLayout) findViewById(R.id.constraintLayout3);
+        para1 = findViewById(R.id.button);
+        para2 = findViewById(R.id.button2);
+        para3 = findViewById(R.id.button3);
+        para4 = findViewById(R.id.button4);
+
 
         Locale locale = new Locale("ru");
         Locale.setDefault(locale);
 
-        aboba.setBackgroundColor(R.color.Main);
 
         Calendar calendar = Calendar.getInstance();
         calendar.setFirstDayOfWeek(Calendar.SUNDAY);
@@ -57,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMMM, EEEE");
         String dateTime = simpleDateFormat.format(calendar.getTime());
         textView.setText(dateTime);
+        SaveRead.with(MainActivity.this).write("1 para mon", R.id.constraintLayout3);
 
         View.OnClickListener raspisanie = view -> {
             Intent intent = new Intent(MainActivity.this, MainActivity.class);
@@ -76,29 +71,34 @@ public class MainActivity extends AppCompatActivity {
         };
         setting.setOnClickListener(set);
 
-        View.OnClickListener firstpara = view -> {
-            Intent intent = new Intent(MainActivity.this, RaspPlus.class);
-            startActivity(intent);
-        };
-        para1.setOnClickListener(firstpara);
+        para1.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(MainActivity.this, RaspPlus.class);
+                    intent.putExtra("id", 1);
+                    startActivity(intent);
+                });
 
-        View.OnClickListener secondpara = view -> {
-            Intent intent = new Intent(MainActivity.this, RaspPlus.class);
-            startActivity(intent);
-        };
-        para2.setOnClickListener(secondpara);
 
-        View.OnClickListener thirdpara = view -> {
-            Intent intent = new Intent(MainActivity.this, RaspPlus.class);
-            startActivity(intent);
-        };
-        para3.setOnClickListener(thirdpara);
+        para2.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(MainActivity.this, RaspPlus.class);
+                    intent.putExtra("id", 2);
+                    startActivity(intent);
+                });
 
-        View.OnClickListener fourthpara = view -> {
-            Intent intent = new Intent(MainActivity.this, RaspPlus.class);
-            startActivity(intent);
-        };
-        para4.setOnClickListener(fourthpara);
+        para3.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(MainActivity.this, RaspPlus.class);
+                    intent.putExtra("id", 3);
+                    startActivity(intent);
+                });
+
+        para4.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(MainActivity.this, RaspPlus.class);
+                    intent.putExtra("id", 4);
+                    startActivity(intent);
+                });
 
 
         Intent intent = getIntent();

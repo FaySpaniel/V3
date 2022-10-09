@@ -4,18 +4,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RaspPlus extends AppCompatActivity {
-    float x1,x2,y1,y2;
+    float x1, x2, y1, y2;
     ImageButton rasp;
     ImageButton zad;
     ImageButton setting;
     ImageButton back;
     ImageButton trash;
+    ImageButton save;
+    EditText predmet;
+    EditText prepod;
+    EditText cab;
+    EditText starttime;
+    EditText endtime;
+    EditText typeles;
+    private int id;
+    private ParaInfo load;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +37,34 @@ public class RaspPlus extends AppCompatActivity {
         setting = (ImageButton) findViewById(R.id.Setting);
         back = (ImageButton) findViewById(R.id.Back);
         trash = (ImageButton) findViewById(R.id.Trash);
-        Spinner spinner = findViewById(R.id.spinner);
+        save = (ImageButton)  findViewById(R.id.SaveBtn);
+        predmet = findViewById(R.id.Predmet);
+        prepod = findViewById(R.id.prepod);
+        cab = findViewById(R.id.Kabinet);
+        starttime = findViewById(R.id.start);
+        endtime = findViewById(R.id.end);
+        typeles = findViewById(R.id.TypeLesson);
 
-        int selected = spinner.getSelectedItemPosition();
+
+
+
+        id = getIntent().getIntExtra("id", -1);
+        SaveRead with = SaveRead.with(this);
+        String name = String.valueOf(id);
+        if (with.hasKey(name)) {
+            String s = with.readString(name);
+            load = ParaInfo.load(s);
+            prepod.setText(load.prepod);
+            predmet.setText(load.predmet);
+            cab.setText(load.cab);
+            starttime.setText(load.starttime);
+            endtime.setText(load.endtime);
+            typeles.setText(load.typels);
+        } else {
+            load = new ParaInfo();
+            load.id=id;
+        }
+
 
         View.OnClickListener raspisanie = view -> {
             Intent intent = new Intent(RaspPlus.this, MainActivity.class);
@@ -59,6 +94,21 @@ public class RaspPlus extends AppCompatActivity {
             finish();
         };
         back.setOnClickListener(bac);
+
+        View.OnClickListener SaveInfo = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                load.predmet=predmet.getText().toString();
+                load.cab = cab.getText().toString();
+                load.endtime = endtime.getText().toString();
+                load.starttime = starttime.getText().toString();
+                load.typels = typeles.getText().toString();
+                load.prepod = prepod.getText().toString();
+                String save = load.save();
+                with.write(name,save);
+            }
+        };
+        save.setOnClickListener(SaveInfo);
     }
 
     public boolean onTouchEvent(MotionEvent touchEvent) {

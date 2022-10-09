@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class Friday extends AppCompatActivity {
     ImageButton rasp;
     ImageButton zad;
     ImageButton setting;
+    Button para1, para2,para3,para4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,10 @@ public class Friday extends AppCompatActivity {
         rasp = (ImageButton) findViewById(R.id.Raspisanie);
         zad = (ImageButton) findViewById(R.id.Zadanie);
         setting = (ImageButton) findViewById(R.id.Setting);
+        para1 = findViewById(R.id.button17);
+        para2 = findViewById(R.id.button18);
+        para3 = findViewById(R.id.button19);
+        para4 = findViewById(R.id.button20);
 
         Locale locale = new Locale("ru");
         Locale.setDefault(locale);
@@ -58,6 +64,34 @@ public class Friday extends AppCompatActivity {
             startActivity(intent);
         };
         setting.setOnClickListener(set);
+        para1.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Friday.this, RaspPlus.class);
+                    intent.putExtra("id", 17);
+                    startActivity(intent);
+                });
+
+
+        para2.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Friday.this, RaspPlus.class);
+                    intent.putExtra("id", 18);
+                    startActivity(intent);
+                });
+
+        para3.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Friday.this, RaspPlus.class);
+                    intent.putExtra("id", 19);
+                    startActivity(intent);
+                });
+
+        para4.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Friday.this, RaspPlus.class);
+                    intent.putExtra("id", 20);
+                    startActivity(intent);
+                });
     }
 
     public boolean onTouchEvent(MotionEvent touchEvent) {
