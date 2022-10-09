@@ -259,8 +259,8 @@
         android:background="@drawable/rounded_corner_view"
         android:backgroundTint="#D9D2BD"
         android:ems="10"
-        android:hint="Номер"
         android:gravity="center"
+        android:hint="Номер"
         android:inputType="phone"
         app:layout_constraintStart_toEndOf="@+id/textView27"
         app:layout_constraintTop_toBottomOf="@+id/Predmet" />

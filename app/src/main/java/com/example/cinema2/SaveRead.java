@@ -1,8 +1,8 @@
 package com.example.cinema2;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
@@ -89,12 +89,15 @@ public class SaveRead {
     public void clearPrefs() {
         sharedPreferences.edit().clear().apply();
     }
+
     public void saveJson(String name, JsonObject jo) {
-        saveJson(name,jo.toString());
+        saveJson(name, jo.toString());
     }
+
     public void saveJson(String name, String jo) {
         sharedPreferences.edit().putString(name, jo.toString()).apply();
     }
+
     public JsonObject readJson(String name) {
         return JsonParser.parseString(sharedPreferences.getString(name, DEFAULT_STRING)).getAsJsonObject();
     }

@@ -2,6 +2,7 @@ package com.example.cinema2;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -22,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton rasp;
     ImageButton zad;
     ImageButton setting;
-    Button para1, para2,para3,para4;
+    Button para1, para2, para3, para4;
+    ConstraintLayout para1l, para2l, para3l, para4l;
 
 
     @SuppressLint("ResourceAsColor")
@@ -39,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
         para2 = findViewById(R.id.button2);
         para3 = findViewById(R.id.button3);
         para4 = findViewById(R.id.button4);
+        para1l = findViewById(R.id.constraintLayout3);
+        para2l = findViewById(R.id.constraintLayout5);
+        para3l = findViewById(R.id.constraintLayout6);
+        para4l = findViewById(R.id.constraintLayout7);
 
 
         Locale locale = new Locale("ru");
@@ -51,7 +58,12 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMMM, EEEE");
         String dateTime = simpleDateFormat.format(calendar.getTime());
         textView.setText(dateTime);
-        SaveRead.with(MainActivity.this).write("1 para mon", R.id.constraintLayout3);
+        SaveRead with = SaveRead.with(MainActivity.this);
+
+
+        int type = 0;
+        if (with.hasKey("weektype"))
+            type = with.readInt("weektype");
 
         View.OnClickListener raspisanie = view -> {
             Intent intent = new Intent(MainActivity.this, MainActivity.class);
@@ -71,10 +83,11 @@ public class MainActivity extends AppCompatActivity {
         };
         setting.setOnClickListener(set);
 
+        int finalType = type;
         para1.setOnClickListener
                 (view -> {
                     Intent intent = new Intent(MainActivity.this, RaspPlus.class);
-                    intent.putExtra("id", 1);
+                    intent.putExtra("id", finalType == 0 ? 1 : 101);
                     startActivity(intent);
                 });
 
@@ -82,21 +95,21 @@ public class MainActivity extends AppCompatActivity {
         para2.setOnClickListener
                 (view -> {
                     Intent intent = new Intent(MainActivity.this, RaspPlus.class);
-                    intent.putExtra("id", 2);
+                    intent.putExtra("id", finalType == 0 ? 2 : 102);
                     startActivity(intent);
                 });
 
         para3.setOnClickListener
                 (view -> {
                     Intent intent = new Intent(MainActivity.this, RaspPlus.class);
-                    intent.putExtra("id", 3);
+                    intent.putExtra("id", finalType == 0 ? 3 : 103);
                     startActivity(intent);
                 });
 
         para4.setOnClickListener
                 (view -> {
                     Intent intent = new Intent(MainActivity.this, RaspPlus.class);
-                    intent.putExtra("id", 4);
+                    intent.putExtra("id", finalType == 0 ? 4 : 104);
                     startActivity(intent);
                 });
 
@@ -124,8 +137,71 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         }
+        updateData();
     }
 
+    public void updateData() {
+        String[] ids;
+        SaveRead with = SaveRead.with(this);
+        int type = 0;
+        if (with.hasKey("weektype"))
+            type = with.readInt("weektype");
+        if (type == 0)
+            ids = new String[]{"1", "2", "3", "4"};
+        else ids = new String[]{"101", "102", "103", "104"};
+        for (String id : ids) {
+            if (with.hasKey(id)) {
+                String s = with.readString(id);
+                ParaInfo load = ParaInfo.load(s);
+                switch (id) {
+                    case "101":
+                    case "1": {
+                        if (!load.color.trim().isEmpty())
+                            para1l.setBackgroundColor(Color.parseColor(load.color));
+
+                        ((TextView) findViewById(R.id.cab1)).setText(load.cab);
+                        ((TextView) findViewById(R.id.starttime1)).setText(load.starttime);
+                        ((TextView) findViewById(R.id.endtime1)).setText(load.endtime);
+                        ((TextView) findViewById(R.id.predmet1)).setText(load.predmet);
+                        break;
+                    }
+                    case "102":
+                    case "2": {
+                        if (!load.color.trim().isEmpty())
+                            para2l.setBackgroundColor(Color.parseColor(load.color));
+
+                        ((TextView) findViewById(R.id.cab2)).setText(load.cab);
+                        ((TextView) findViewById(R.id.starttime2)).setText(load.starttime);
+                        ((TextView) findViewById(R.id.endtime2)).setText(load.endtime);
+                        ((TextView) findViewById(R.id.predmet2)).setText(load.predmet);
+                        break;
+                    }
+                    case "103":
+                    case "3": {
+                        if (!load.color.trim().isEmpty())
+                            para3l.setBackgroundColor(Color.parseColor(load.color));
+
+                        ((TextView) findViewById(R.id.cab3)).setText(load.cab);
+                        ((TextView) findViewById(R.id.starttime3)).setText(load.starttime);
+                        ((TextView) findViewById(R.id.endtime3)).setText(load.endtime);
+                        ((TextView) findViewById(R.id.predmet3)).setText(load.predmet);
+                        break;
+                    }
+                    case "104":
+                    case "4": {
+                        if (!load.color.trim().isEmpty())
+                            para4l.setBackgroundColor(Color.parseColor(load.color));
+
+                        ((TextView) findViewById(R.id.cab4)).setText(load.cab);
+                        ((TextView) findViewById(R.id.starttime4)).setText(load.starttime);
+                        ((TextView) findViewById(R.id.endtime4)).setText(load.endtime);
+                        ((TextView) findViewById(R.id.predmet4)).setText(load.predmet);
+                        break;
+                    }
+                }
+            }
+        }
+    }
 
     public boolean onTouchEvent(MotionEvent touchEvent) {
         switch (touchEvent.getAction()) {

@@ -1,6 +1,7 @@
 package com.example.cinema2;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -21,7 +23,8 @@ public class Thursday extends AppCompatActivity {
     ImageButton rasp;
     ImageButton zad;
     ImageButton setting;
-    Button para1, para2,para3,para4;
+    Button para1, para2, para3, para4;
+    ConstraintLayout para1l, para2l, para3l, para4l;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,10 @@ public class Thursday extends AppCompatActivity {
         para2 = findViewById(R.id.button14);
         para3 = findViewById(R.id.button15);
         para4 = findViewById(R.id.button16);
+        para1l = findViewById(R.id.constraintLayout3);
+        para2l = findViewById(R.id.constraintLayout5);
+        para3l = findViewById(R.id.constraintLayout6);
+        para4l = findViewById(R.id.constraintLayout7);
 
         Locale locale = new Locale("ru");
         Locale.setDefault(locale);
@@ -46,6 +53,13 @@ public class Thursday extends AppCompatActivity {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMMM, EEEE");
         String dateTime = simpleDateFormat.format(calendar.getTime());
         textView.setText(dateTime);
+
+        SaveRead with = SaveRead.with(this);
+
+
+        int type = 0;
+        if (with.hasKey("weektype"))
+            type = with.readInt("weektype");
 
         View.OnClickListener raspisanie = view -> {
             Intent intent = new Intent(Thursday.this, Thursday.class);
@@ -65,10 +79,11 @@ public class Thursday extends AppCompatActivity {
         };
         setting.setOnClickListener(set);
 
+        int finalType = type;
         para1.setOnClickListener
                 (view -> {
                     Intent intent = new Intent(Thursday.this, RaspPlus.class);
-                    intent.putExtra("id", 13);
+                    intent.putExtra("id", finalType == 0 ? 13 : 113);
                     startActivity(intent);
                 });
 
@@ -76,23 +91,87 @@ public class Thursday extends AppCompatActivity {
         para2.setOnClickListener
                 (view -> {
                     Intent intent = new Intent(Thursday.this, RaspPlus.class);
-                    intent.putExtra("id", 14);
+                    intent.putExtra("id", finalType == 0 ? 14 : 114);
                     startActivity(intent);
                 });
 
         para3.setOnClickListener
                 (view -> {
                     Intent intent = new Intent(Thursday.this, RaspPlus.class);
-                    intent.putExtra("id", 15);
+                    intent.putExtra("id", finalType == 0 ? 15 : 115);
                     startActivity(intent);
                 });
 
         para4.setOnClickListener
                 (view -> {
                     Intent intent = new Intent(Thursday.this, RaspPlus.class);
-                    intent.putExtra("id", 16);
+                    intent.putExtra("id", finalType == 0 ? 16 : 116);
                     startActivity(intent);
                 });
+        updateData();
+    }
+
+    public void updateData() {
+        String[] ids;
+        SaveRead with = SaveRead.with(this);
+        int type = 0;
+        if (with.hasKey("weektype"))
+            type = with.readInt("weektype");
+        if (type == 0)
+            ids = new String[]{"13", "14", "15", "16"};
+        else ids = new String[]{"113", "114", "115", "116"};
+        for (String id : ids) {
+            if (with.hasKey(id)) {
+                String s = with.readString(id);
+                ParaInfo load = ParaInfo.load(s);
+                switch (id) {
+                    case "113":
+                    case "13": {
+                        if (!load.color.trim().isEmpty())
+                            para1l.setBackgroundColor(Color.parseColor(load.color));
+
+                        ((TextView) findViewById(R.id.cab1)).setText(load.cab);
+                        ((TextView) findViewById(R.id.starttime1)).setText(load.starttime);
+                        ((TextView) findViewById(R.id.endtime1)).setText(load.endtime);
+                        ((TextView) findViewById(R.id.predmet1)).setText(load.predmet);
+                        break;
+                    }
+                    case "114":
+                    case "14": {
+                        if (!load.color.trim().isEmpty())
+                            para2l.setBackgroundColor(Color.parseColor(load.color));
+
+                        ((TextView) findViewById(R.id.cab2)).setText(load.cab);
+                        ((TextView) findViewById(R.id.starttime2)).setText(load.starttime);
+                        ((TextView) findViewById(R.id.endtime2)).setText(load.endtime);
+                        ((TextView) findViewById(R.id.predmet2)).setText(load.predmet);
+                        break;
+                    }
+                    case "115":
+                    case "15": {
+                        if (!load.color.trim().isEmpty())
+                            para3l.setBackgroundColor(Color.parseColor(load.color));
+
+                        ((TextView) findViewById(R.id.cab3)).setText(load.cab);
+                        ((TextView) findViewById(R.id.starttime3)).setText(load.starttime);
+                        ((TextView) findViewById(R.id.endtime3)).setText(load.endtime);
+                        ((TextView) findViewById(R.id.predmet3)).setText(load.predmet);
+                        break;
+                    }
+                    case "116":
+                    case "16": {
+                        if (!load.color.trim().isEmpty())
+                            para4l.setBackgroundColor(Color.parseColor(load.color));
+
+                        ((TextView) findViewById(R.id.cab4)).setText(load.cab);
+                        ((TextView) findViewById(R.id.starttime4)).setText(load.starttime);
+                        ((TextView) findViewById(R.id.endtime4)).setText(load.endtime);
+                        ((TextView) findViewById(R.id.predmet4)).setText(load.predmet);
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     public boolean onTouchEvent(MotionEvent touchEvent) {
