@@ -15,6 +15,7 @@ public class ColorForLayout extends AppCompatActivity {
     ImageButton rasp;
     ImageButton zad;
     ImageButton setting;
+    private int id;
 
     @SuppressLint("ResourceType")
     @Override
@@ -64,7 +65,7 @@ public class ColorForLayout extends AppCompatActivity {
 
         rasp.setOnClickListener
                 (view -> {
-                    Intent intent = new Intent(ColorForLayout.this,MainActivity.class);
+                    Intent intent = new Intent(ColorForLayout.this, MainActivity.class);
                     startActivity(intent);
                 });
 
@@ -81,266 +82,273 @@ public class ColorForLayout extends AppCompatActivity {
                 });
 
 
-        int id = getIntent().getIntExtra("id", -1);
+        id = getIntent().getIntExtra("id", -1);
         SaveRead with = SaveRead.with(this);
         String name = String.valueOf(id);
-        ParaInfo load;
+        IColor load;
         if (with.hasKey(name)) {
             String s = with.readString(name);
-            load = ParaInfo.load(s);
+            if (id >= 51 && id <= 55)
+                load = TaskInfo.load(s);
+            else
+                load = ParaInfo.load(s);
 
         } else {
-            load = new ParaInfo();
-            load.id = id;
+            if (id >= 51 && id <= 55)
+                load = new TaskInfo();
+
+            else
+                load = new ParaInfo();
+            load.setid(id);
         }
 
 
         abrikos.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Abrikos);
+            load.setcolor(getResources().getString(R.color.Abrikos));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         aquamarine.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Aquamarine);
+            load.setcolor(getResources().getString(R.color.Aquamarine));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         blue.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Blue);
+            load.setcolor(getResources().getString(R.color.Blue));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         bheaven.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Bright_Heaven);
+            load.setcolor(getResources().getString(R.color.Bright_Heaven));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         borange.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Bright_Orange);
+            load.setcolor(getResources().getString(R.color.Bright_Orange));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         bpink.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Bright_Orange);
+            load.setcolor(getResources().getString(R.color.Bright_Orange));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         briblue.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Briliant_blue);
+            load.setcolor(getResources().getString(R.color.Briliant_blue));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         brown.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Brown);
+            load.setcolor(getResources().getString(R.color.Brown));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         dblue.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Deep_Blue);
+            load.setcolor(getResources().getString(R.color.Deep_Blue));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         dgreen.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Deep_Green);
+            load.setcolor(getResources().getString(R.color.Deep_Green));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         chertopolox.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Chertopolox);
+            load.setcolor(getResources().getString(R.color.Chertopolox));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         dpurple.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Deep_Purple);
+            load.setcolor(getResources().getString(R.color.Deep_Purple));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         ddark.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Deep_Dark);
+            load.setcolor(getResources().getString(R.color.Deep_Dark));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         dpink.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Dark_Pink);
+            load.setcolor(getResources().getString(R.color.Dark_Pink));
             String save = load.save();
             with.write(name, save);
         });
 
         glinomes.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Glinomes);
+            load.setcolor(getResources().getString(R.color.Glinomes));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         gtree.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Green_Tree);
+            load.setcolor(getResources().getString(R.color.Green_Tree));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         gray.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Gray);
+            load.setcolor(getResources().getString(R.color.Gray));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         grass.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Grass);
+            load.setcolor(getResources().getString(R.color.Grass));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         hacki.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Hacki);
+            load.setcolor(getResources().getString(R.color.Hacki));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         flower.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Flower);
+            load.setcolor(getResources().getString(R.color.Flower));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         heaven.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Heaven);
+            load.setcolor(getResources().getString(R.color.Heaven));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         niagara.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Niagara);
+            load.setcolor(getResources().getString(R.color.Niagara));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         latoune.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Latoune);
+            load.setcolor(getResources().getString(R.color.Latoune));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         mandrine.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Mandarine);
+            load.setcolor(getResources().getString(R.color.Mandarine));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         opink.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Oper_Pink);
+            load.setcolor(getResources().getString(R.color.Oper_Pink));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         mint.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Mint);
+            load.setcolor(getResources().getString(R.color.Mint));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         maline.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Maline);
+            load.setcolor(getResources().getString(R.color.Maline));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         lbrown.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Light_Brown);
+            load.setcolor(getResources().getString(R.color.Light_Brown));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         pinka.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Pink_antic);
+            load.setcolor(getResources().getString(R.color.Pink_antic));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         pinkq.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Pink_Quartz);
+            load.setcolor(getResources().getString(R.color.Pink_Quartz));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         whitegreen.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.White_Green);
+            load.setcolor(getResources().getString(R.color.White_Green));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         sparge.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Sparge);
+            load.setcolor(getResources().getString(R.color.Sparge));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         tomato.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Tomato);
+            load.setcolor(getResources().getString(R.color.Tomato));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         siena.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Siena);
+            load.setcolor(getResources().getString(R.color.Siena));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         blackred.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.Black_Red);
+            load.setcolor(getResources().getString(R.color.Black_Red));
             String save = load.save();
             with.write(name, save);
             back(name);
         });
 
         white.setOnClickListener(view -> {
-            load.color = getResources().getString(R.color.white);
+            load.setcolor(getResources().getString(R.color.white));
             String save = load.save();
             with.write(name, save);
             back(name);
@@ -348,13 +356,18 @@ public class ColorForLayout extends AppCompatActivity {
 
 
     }
-    public void back(String color)
-    {
-        Intent intent = new Intent(this,RaspPlus.class);
-        intent.putExtra("id",color);
+
+    public void back(String color) {
+        Intent intent;
+        if (id>=51&& id<=55)
+            intent= new Intent(this, Tasks.class);
+        else
+            intent= new Intent(this, RaspPlus.class);
+        intent.putExtra("id", color);
         startActivity(intent);
         finish();
     }
+
     public boolean onTouchEvent(MotionEvent touchEvent) {
         switch (touchEvent.getAction()) {
             case MotionEvent.ACTION_DOWN:

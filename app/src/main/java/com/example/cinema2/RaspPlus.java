@@ -90,7 +90,8 @@ public class RaspPlus extends AppCompatActivity {
 
         back.setOnClickListener
                 (view -> {
-                    finish();
+                    Intent intent = new Intent(RaspPlus.this, MainActivity.class);
+                    startActivity(intent);
                 });
 
         View.OnClickListener SaveInfo = new View.OnClickListener() {
