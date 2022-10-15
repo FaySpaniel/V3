@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
@@ -102,6 +103,8 @@ public class Tasks extends AppCompatActivity {
             load.note=note.getText().toString();
             String save = load.save();
             with.write(name, save);
+            Toast toast= Toast.makeText(getApplicationContext(),"Задание записано!",Toast.LENGTH_SHORT);
+            toast.show();
 
         };
         save.setOnClickListener(SaveInfo);

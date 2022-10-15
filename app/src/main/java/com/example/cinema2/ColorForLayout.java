@@ -366,6 +366,7 @@ public class ColorForLayout extends AppCompatActivity {
         intent.putExtra("id", color);
         startActivity(intent);
         finish();
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
 
     public boolean onTouchEvent(MotionEvent touchEvent) {

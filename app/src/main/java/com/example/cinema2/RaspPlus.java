@@ -6,6 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -107,7 +108,8 @@ public class RaspPlus extends AppCompatActivity {
                 load.prepod = prepod.getText().toString();
                 String save = load.save();
                 with.write(name, save);
-
+                Toast toast= Toast.makeText(getApplicationContext(),"Расписание на день сохранено!",Toast.LENGTH_SHORT);
+                toast.show();
             }
         };
         save.setOnClickListener(SaveInfo);
