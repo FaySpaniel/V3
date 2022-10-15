@@ -86,12 +86,14 @@ public class RaspPlus extends AppCompatActivity {
                     SaveRead.with(this).removeKey(name);
                     startActivity(new Intent(this, MainActivity.class));
                     finish();
+                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                 });
 
         back.setOnClickListener
                 (view -> {
                     Intent intent = new Intent(RaspPlus.this, MainActivity.class);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                 });
 
         View.OnClickListener SaveInfo = new View.OnClickListener() {
@@ -124,6 +126,7 @@ public class RaspPlus extends AppCompatActivity {
                     Intent i = new Intent(RaspPlus.this, ColorForLayout.class);
                     i.putExtra("id", id);
                     startActivity(i);
+                    overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
                 }
                 break;
         }

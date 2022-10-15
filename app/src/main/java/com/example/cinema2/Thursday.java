@@ -187,11 +187,13 @@ public class Thursday extends AppCompatActivity {
                 if (x1 < x2) {
                     Intent i = new Intent(Thursday.this, Wednesday.class);
                     startActivity(i);
+                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
 
                 } else {
                     if (x2 < x1) {
                         Intent i = new Intent(Thursday.this, Friday.class);
                         startActivity(i);
+                        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
                     }
                 }
                 break;

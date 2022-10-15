@@ -215,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
                 if (x2 < x1) {
                     Intent i = new Intent(MainActivity.this, Tuesday.class);
                     startActivity(i);
+                    overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
                 }
                 break;
         }
