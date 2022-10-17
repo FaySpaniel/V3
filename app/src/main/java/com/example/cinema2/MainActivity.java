@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         if (with.hasKey("weektype"))
             type = with.readInt("weektype");
 
+
         rasp.setOnClickListener
                 (view -> {
                     Intent intent = new Intent(MainActivity.this, MainActivity.class);

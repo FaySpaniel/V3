@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -108,6 +109,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран абрикосовый цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         aquamarine.setOnClickListener(view -> {
@@ -115,6 +118,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран аквамариновый цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         blue.setOnClickListener(view -> {
@@ -122,6 +127,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран голубой цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         bheaven.setOnClickListener(view -> {
@@ -129,6 +136,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран небесный цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         borange.setOnClickListener(view -> {
@@ -136,13 +145,17 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран светло-оранжевый цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         bpink.setOnClickListener(view -> {
-            load.setcolor(getResources().getString(R.color.Bright_Orange));
+            load.setcolor(getResources().getString(R.color.Bright_Pink));
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран светло-розовый цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         briblue.setOnClickListener(view -> {
@@ -150,6 +163,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран бриллиантово-синий цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         brown.setOnClickListener(view -> {
@@ -157,6 +172,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет натуральная умбра",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         dblue.setOnClickListener(view -> {
@@ -164,6 +181,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран сапфировый цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         dgreen.setOnClickListener(view -> {
@@ -171,6 +190,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран тёмно-зелёный цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         chertopolox.setOnClickListener(view -> {
@@ -178,6 +199,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет чертополоха",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         dpurple.setOnClickListener(view -> {
@@ -185,6 +208,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран тёмно-фиолетовый цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         ddark.setOnClickListener(view -> {
@@ -192,12 +217,16 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран тёмно-синий цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         dpink.setOnClickListener(view -> {
             load.setcolor(getResources().getString(R.color.Dark_Pink));
             String save = load.save();
             with.write(name, save);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран розовато-лиловый цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         glinomes.setOnClickListener(view -> {
@@ -205,6 +234,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет извстковой глины",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         gtree.setOnClickListener(view -> {
@@ -212,6 +243,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет зелёной сосны",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         gray.setOnClickListener(view -> {
@@ -219,6 +252,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет защитный хаки",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         grass.setOnClickListener(view -> {
@@ -226,6 +261,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран травяной цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         hacki.setOnClickListener(view -> {
@@ -233,6 +270,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет хаки",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         flower.setOnClickListener(view -> {
@@ -240,6 +279,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет весенний бутон",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         heaven.setOnClickListener(view -> {
@@ -247,6 +288,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран васильковый цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         niagara.setOnClickListener(view -> {
@@ -254,6 +297,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет ниагара",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         latoune.setOnClickListener(view -> {
@@ -261,6 +306,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет античная латунь",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         mandrine.setOnClickListener(view -> {
@@ -268,6 +315,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет тусклый мандарин",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         opink.setOnClickListener(view -> {
@@ -275,6 +324,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет розовато-оперный",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         mint.setOnClickListener(view -> {
@@ -282,6 +333,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран мятный цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         maline.setOnClickListener(view -> {
@@ -289,6 +342,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран серобуромалиновый цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         lbrown.setOnClickListener(view -> {
@@ -296,6 +351,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран светло-коричневый цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         pinka.setOnClickListener(view -> {
@@ -303,6 +360,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет розовый антик",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         pinkq.setOnClickListener(view -> {
@@ -310,6 +369,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет розовый кварц",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         whitegreen.setOnClickListener(view -> {
@@ -317,6 +378,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран бело-зелёный цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         sparge.setOnClickListener(view -> {
@@ -324,6 +387,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет спаржа",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         tomato.setOnClickListener(view -> {
@@ -331,6 +396,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран томатно-красный цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         siena.setOnClickListener(view -> {
@@ -338,6 +405,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран цвет сиена",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         blackred.setOnClickListener(view -> {
@@ -345,6 +414,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран тёмно-красный цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
         white.setOnClickListener(view -> {
@@ -352,6 +423,8 @@ public class ColorForLayout extends AppCompatActivity {
             String save = load.save();
             with.write(name, save);
             back(name);
+            Toast toast = Toast.makeText(getApplicationContext(),"Выбран белый цвет",Toast.LENGTH_SHORT);
+            toast.show();
         });
 
 
