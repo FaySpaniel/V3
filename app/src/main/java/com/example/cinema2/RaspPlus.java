@@ -1,11 +1,13 @@
 package com.example.cinema2;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -98,6 +100,7 @@ public class RaspPlus extends AppCompatActivity {
                 });
 
         View.OnClickListener SaveInfo = new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View view) {
                 load.predmet = predmet.getText().toString();

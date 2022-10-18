@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
@@ -15,6 +16,7 @@ public class Settings extends AppCompatActivity {
     ImageButton zad;
     ImageButton setting;
     ImageButton back;
+    Button max;
 
 
     @Override
@@ -27,6 +29,7 @@ public class Settings extends AppCompatActivity {
         setting = (ImageButton) findViewById(R.id.Setting);
         back = (ImageButton) findViewById(R.id.Back);
         Spinner typeweek = findViewById(R.id.spinner);
+        max = findViewById(R.id.button66);
 
         typeweek.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent,
@@ -61,6 +64,11 @@ public class Settings extends AppCompatActivity {
                 (view -> {
                     finish();
                     overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                });
+        max.setOnClickListener
+                (view -> {
+                    Intent intent = new Intent(Settings.this, SuperMax.class);
+                    startActivity(intent);
                 });
 
         SaveRead with = SaveRead.with(this);
