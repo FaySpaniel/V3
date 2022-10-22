@@ -99,21 +99,17 @@ public class RaspPlus extends AppCompatActivity {
                     overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                 });
 
-        View.OnClickListener SaveInfo = new View.OnClickListener() {
-            @SuppressLint("ResourceAsColor")
-            @Override
-            public void onClick(View view) {
-                load.predmet = predmet.getText().toString();
-                load.cab = cab.getText().toString();
-                load.endtime = endtime.getText().toString();
-                load.starttime = starttime.getText().toString();
-                load.typels = typeles.getText().toString();
-                load.prepod = prepod.getText().toString();
-                String save = load.save();
-                with.write(name, save);
-                Toast toast= Toast.makeText(getApplicationContext(),"Расписание на день сохранено!",Toast.LENGTH_SHORT);
-                toast.show();
-            }
+        View.OnClickListener SaveInfo = view -> {
+            load.predmet = predmet.getText().toString();
+            load.cab = cab.getText().toString();
+            load.endtime = endtime.getText().toString();
+            load.starttime = starttime.getText().toString();
+            load.typels = typeles.getText().toString();
+            load.prepod = prepod.getText().toString();
+            String save = load.save();
+            with.write(name, save);
+            Toast toast= Toast.makeText(getApplicationContext(),"Расписание на день сохранено!",Toast.LENGTH_SHORT);
+            toast.show();
         };
         save.setOnClickListener(SaveInfo);
     }

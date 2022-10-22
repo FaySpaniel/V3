@@ -181,23 +181,4 @@ public class TaskMain extends AppCompatActivity {
             }
         }
     }
-
-    //public boolean onTouchEvent(MotionEvent touchEvent) {
-    //    switch (touchEvent.getAction()) {
-    //        case MotionEvent.ACTION_DOWN:
-    //            x1 = touchEvent.getX();
-    //            y1 = touchEvent.getY();
-    //            break;
-    //        case MotionEvent.ACTION_UP:
-    //            x2 = touchEvent.getX();
-    //            y2 = touchEvent.getY();
-    //            if (x2 < x1) {
-    //                Intent i = new Intent(this, Tasks.class);
-    //                startActivity(i);
-    //                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
-    //            }
-    //            break;
-    //    }
-    //    return false;
-    //}
 }

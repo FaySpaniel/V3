@@ -126,18 +126,18 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout12"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/red1" />
+        app:srcCompat="@drawable/banka" />
 
     <Button
         android:id="@+id/button66"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:alpha="0"
