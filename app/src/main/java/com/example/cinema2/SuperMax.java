@@ -22,7 +22,10 @@ public class SuperMax extends AppCompatActivity {
         mikurun = findViewById(R.id.button68);
 
 
-        supermax.setOnClickListener ( view -> mPlayermax.start());
+        supermax.setOnClickListener
+                (
+                        view -> mPlayermax.start()
+                );
         mikurun.setOnClickListener ( view -> mPlayerMiku.start());
 
     }
